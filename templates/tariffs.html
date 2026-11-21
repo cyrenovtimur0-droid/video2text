@@ -1,0 +1,254 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="icon" type="image/png"
+      href="{{ url_for('static', filename='favicon.png') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тарифы — Video2Text</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #080a10;
+            color: white;
+        }
+
+        header {
+            padding: 22px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #202536;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #3478f6;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: #aab3c5;
+            text-decoration: none;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #3478f6;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 70px auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 38px;
+        }
+
+        .subtitle {
+            color: #929bad;
+            margin-bottom: 45px;
+        }
+
+        .plans {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+            align-items: stretch;
+        }
+
+        .plan {
+            background: #fff;
+            color: #171c29;
+            padding: 28px 20px;
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .plan.popular {
+            border: 3px solid #3478f6;
+        }
+
+        .plan h2 {
+            font-size: 21px;
+        }
+
+        .price {
+            font-size: 32px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        .minutes {
+            color: #3478f6;
+            font-weight: bold;
+        }
+
+        .plan ul {
+            padding-left: 20px;
+            color: #687080;
+            line-height: 2;
+            flex-grow: 1;
+        }
+
+        .plan button {
+            border: none;
+            background: #3478f6;
+            color: white;
+            padding: 13px;
+            border-radius: 9px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        .plan button:hover {
+            background: #205ed0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #778197;
+        }
+
+        @media (max-width: 850px) {
+            .plans {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 520px) {
+            header {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav {
+                gap: 15px;
+            }
+
+            .plans {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 29px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">Video<span>2Text</span></div>
+
+    <nav>
+        <a href="/">Распознавание</a>
+        <a href="/tariffs" class="active">Тарифы</a>
+    </nav>
+</header>
+
+<main>
+    <h1>Выберите свой тариф</h1>
+
+    <p class="subtitle">
+        Подберите подходящий объём распознавания
+        для своих задач
+    </p>
+
+    <div class="plans">
+
+        <div class="plan">
+            <h2>Бесплатный</h2>
+            <div class="price">0 ₽</div>
+            <p class="minutes">30 минут</p>
+
+            <ul>
+                <li>30 минут распознавания</li>
+                <li>Основные функции</li>
+                <li>Без оплаты</li>
+            </ul>
+
+            <button onclick="alert('Вы используете бесплатный тариф')">
+                Начать бесплатно
+            </button>
+        </div>
+
+        <div class="plan">
+            <h2>Старт</h2>
+            <div class="price">300 ₽</div>
+            <p class="minutes">1000 минут</p>
+
+            <ul>
+                <li>1000 минут распознавания</li>
+                <li>Распознавание видео</li>
+                <li>Скачивание текста</li>
+            </ul>
+
+            <button onclick="alert('Оплата пока не подключена')">
+                Выбрать тариф
+            </button>
+        </div>
+
+        <div class="plan popular">
+            <h2>Стандарт</h2>
+            <div class="price">500 ₽</div>
+            <p class="minutes">2000 минут</p>
+
+            <ul>
+                <li>2000 минут распознавания</li>
+                <li>Все основные функции</li>
+                <li>Скачивание текста</li>
+            </ul>
+
+            <button onclick="alert('Оплата пока не подключена')">
+                Выбрать тариф
+            </button>
+        </div>
+
+        <div class="plan">
+            <h2>Максимум</h2>
+            <div class="price">2000 ₽</div>
+            <p class="minutes">10000 минут</p>
+
+            <ul>
+                <li>10000 минут распознавания</li>
+                <li>Все основные функции</li>
+                <li>Большой запас времени</li>
+            </ul>
+
+            <button onclick="alert('Оплата пока не подключена')">
+                Выбрать тариф
+            </button>
+        </div>
+
+    </div>
+</main>
+
+<footer>
+    © 2026 Video2Text
+</footer>
+
+</body>
+</html>
