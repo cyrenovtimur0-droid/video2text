@@ -51,10 +51,7 @@ app = Flask(__name__)
 # Постоянный ключ нужен, чтобы сессия
 # не сбрасывалась при перезапуске сервера.
 # Это ключ для локальной разработки.
-app.secret_key = os.environ.get(
-    "FLASK_SECRET_KEY",
-    "video2text-local-development-key"
-)
+app.secret_key = os.environ.get("SECRET_KEY") or os.urandom(32)
 
 app.permanent_session_lifetime = timedelta(days=7)
 
@@ -514,4 +511,4 @@ def download():
 
 
 if __name__ == "__main__":
-    app.run(debug=True, use_reloader=False)
+    app.run(debug=False, use_reloader=False)
